@@ -1,0 +1,192 @@
+.sample-canvas {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.hide {
+  transition: 0.01s;
+  transform: translateX(-9999px);
+}
+
+.canvas-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.format-buttons {
+  padding: 1.0em;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 1em; /* Adjust space between buttons */
+  align-items: center; /* Center items vertically */
+  justify-content: start; /* Align items to the start of the container */
+}
+
+.color-picker {
+  display: inline-block;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  margin-bottom: 10px;
+  background-color: #FFFFFF;
+  overflow: hidden; /* Hide the default file input */
+}
+
+.custom-file-input {
+  background-color: #FFFFFF; /* White background */
+  border-radius: 15px;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  width: 100px; /* Adjust width as needed */
+  height: 100px; /* Adjust height as needed */
+  font-size: 0.75rem;
+}
+
+
+.format-buttons button {
+  background-color: #FFFFFF; /* White background */
+  color: #6C63FF; /* Adjust this to match the color in the image */
+  padding: 10px;
+  border: none;
+  border-radius: 15px; /* Rounded corners */
+  cursor: pointer;
+  transition: box-shadow 0.3s, transform 0.3s;
+  font-size: 14pt; /* Smaller font size for text */
+  width: 7rem; /* Square size */
+  height: 7rem; /* Square size */
+  margin-bottom: 10px; /* Space between buttons */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around; /* Distribute space between icon and text */
+}
+
+.custom-file-input input[type="file"] {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+
+.custom-file-input::before {
+  content: 'Choose File';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  line-height: 100px;
+  background-color: #eee; /* Light gray background */
+  border-radius: 15px;
+  transition: background-color 0.3s;
+}
+
+.custom-file-input:hover::before {
+  background-color: #ddd; /* Slightly darker gray on hover */
+}
+
+.custom-file-input input[type='file'] + .fa-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 5rem !important;
+}
+
+.color-picker input[type='color'] {
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  -webkit-appearance: none; /* Remove default style in WebKit browsers */
+  appearance: none; /* Remove default style */
+}
+
+/* To remove the color input's square style in Chrome */
+.color-picker input[type='color']::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+.color-picker input[type='color']::-webkit-color-swatch {
+  border: none;
+}
+
+/* Adjust the clear button to match the other buttons */
+.clear-button {
+  background-color: #FFFFFF;
+  color: #6C63FF;
+  padding: 10px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: box-shadow 0.3s, transform 0.3s;
+  font-size: 0.75rem;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.clear-button:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+.clear-button:active {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transform: translateY(1px);
+}
+
+.clear-button .fa-icon {
+  margin-right: 5px;
+  font-size: 4rem !important; /* Set the icon size */
+}
+
+.format-buttons .fa-icon {
+  margin-bottom: 5px; /* Space between icon and text */
+  font-size: 3rem; /* Larger icon size */
+}
+
+.format-buttons button:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* More pronounced shadow on hover */
+  background-color: #dcdbfa;
+  transition: ease all 0.4s;
+  transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+.format-buttons button:active {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Smaller shadow on click */
+  transform: translateY(1px); /* Push down effect on click */
+}
